@@ -31,7 +31,7 @@ export const updateUserProfile = async (req, res) => {
     // Upload Resume
     if (req.file && req.user.role === "user") {
       const originalName = req.file.originalname;
-      const extension = originalname.split(".").pop().toLowerCase();
+      const extension = originalName.split(".").pop().toLowerCase();
 
       // Sanitized filename but keep the extension for raw files
       const nameWithoutExt = originalName.replace(/\.[^/.]+$/, "");

@@ -4,6 +4,7 @@ import "dotenv/config";
 import { connectDB } from "./config/db.js";
 import authRouter from "./routes/auth.routes.js";
 import userRouter from "./routes/user.roues.js";
+import companyRouter from "./routes/company.routes.js";
 
 const PORT = process.env.PORT || 5000;
 const app = express();
@@ -25,6 +26,7 @@ app.use("/uploads", express.static("uploads"));
 // Auth Routes
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
+app.use("/api/company", companyRouter);
 
 app.listen(PORT, () => {
   console.log(`server is running on http://localhost:${PORT}`);
