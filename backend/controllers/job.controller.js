@@ -95,7 +95,7 @@ export const createJob = async (req, res) => {
   }
 };
 
-// Get ALl the Jobs
+// Get All the Jobs
 export const getAllJobs = async (req, res) => {
   try {
     const {
@@ -160,7 +160,7 @@ export const getAllJobs = async (req, res) => {
 // Dashboard stats for admin
 export const getDashboardStats = async (req, res) => {
   try {
-    const adminId = req.users.id;
+    const adminId = req.user.id;
     const totalJobs = await Job.countDocuments();
     const closedJobs = await Job.countDocuments({ status: "closed" });
     const totalApplicationsResult = await Application.aggregate([
@@ -182,7 +182,7 @@ export const getDashboardStats = async (req, res) => {
           as: "jobRecord",
         },
       },
-      { $unwind: "jobRecord" },
+      { $unwind: "$jobRecord" },
       { $count: "count" },
     ]);
 
@@ -196,7 +196,7 @@ export const getDashboardStats = async (req, res) => {
       stats: {
         totalJobs: totalJobs.toLocaleString(),
         closedJobs: closedJobs.toLocaleString(),
-        totalApplications: totalApplications.toLocaleString(),
+        totalApplicants: totalApplications.toLocaleString(),
         totalCompanies: totalCompanies.toLocaleString(),
       },
     });
@@ -211,7 +211,7 @@ export const getDashboardStats = async (req, res) => {
 // Get All Jobs (active, closed) by admin
 export const getJobsByAdmin = async (req, res) => {
   try {
-    const jobs = (await Job.find()).toSorted({ createdAt: -1 });
+    const jobs = await Job.find().sort({ createdAt: -1 });
 
     const applicationStats = await Application.aggregate([
       {
@@ -222,7 +222,7 @@ export const getJobsByAdmin = async (req, res) => {
           as: "userRecord",
         },
       },
-      { $unwind: "userRecord" },
+      { $unwind: "$userRecord" },
       {
         $group: {
           _id: "$job",
@@ -238,7 +238,7 @@ export const getJobsByAdmin = async (req, res) => {
     }, {});
 
     const jobsWithStats = jobs.map((job) => ({
-      ...jobs._doc,
+      ...job._doc,
       applicantsCount: countsMap[job._id.toString()] || 0,
     }));
 
@@ -371,7 +371,7 @@ export const updateJob = async (req, res) => {
 export const deleteJob = async (req, res) => {
   try {
     const job = await Job.findById(req.params.id);
-    if (!jobId) {
+    if (!job) {
       return res.status(404).json({ success: false, message: "Job not found" });
     }
 
