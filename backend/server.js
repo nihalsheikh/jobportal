@@ -6,6 +6,7 @@ import authRouter from "./routes/auth.routes.js";
 import userRouter from "./routes/user.roues.js";
 import companyRouter from "./routes/company.routes.js";
 import jobRouter from "./routes/jobs.routes.js";
+import applicationRouter from "./routes/application.routes.js";
 
 const PORT = process.env.PORT || 5000;
 const app = express();
@@ -29,6 +30,7 @@ app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 app.use("/api/company", companyRouter);
 app.use("/api/job", jobRouter);
+app.use("/api/application", applicationRouter);
 
 app.listen(PORT, () => {
   console.log(`server is running on http://localhost:${PORT}`);
