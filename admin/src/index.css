@@ -1,1 +1,99 @@
 @import "tailwindcss";
+
+/* Backgrounds */
+[data-theme="light"] .bg-\[\#09090B\] {
+    background-color: #fafafa;
+}
+
+[data-theme="light"] .bg-\[\#2B0810\] {
+    background-color: #fff1f2;
+}
+
+[data-theme="light"] .hover\:bg-\[\#2B0810\]:hover {
+    background-color: #fff1f2;
+}
+
+/* Dropdown item hover was: hover:bg-[#09090B] */
+[data-theme="light"] .hover\:bg-\[\#09090B\]:hover {
+    background-color: #fff1f2;
+}
+
+/* Borders */
+[data-theme="light"] .border-\[\#2B0810\] {
+    border-color: #ffe4e6;
+}
+
+[data-theme="light"] .border-\[\#7A0F22\] {
+    border-color: #fecdd3;
+}
+
+/* Nav text: white-on-dark → dark-on-white */
+[data-theme="light"] header .text-white {
+    color: #1c1917;
+}
+
+[data-theme="light"] header .hover\:text-white:hover {
+    color: #1c1917;
+}
+
+/* Exception: login button keeps white text on its crimson bg */
+[data-theme="light"] header .bg-\[\#F5304B\].text-white,
+[data-theme="light"] header .bg-\[\#F5304B\] .text-white {
+    color: #ffffff;
+}
+
+/* Light-colored text becomes readable on white bg */
+[data-theme="light"] .text-stone-100 {
+    color: #44403c;
+}
+
+[data-theme="light"] .text-stone-200 {
+    color: #44403c;
+}
+
+[data-theme="light"] .text-stone-300 {
+    color: #57534e;
+}
+
+/* Dashboard gradient title - stone-200→stone-400 is invisible on white */
+[data-theme="light"] h1.text-transparent {
+    background-image: linear-gradient(to right, #F5304B, #D4293F);
+}
+
+/* Smooth color shift on everything */
+*,
+*::before,
+*::after {
+    transition: background-color 0.35s ease,
+        border-color 0.35s ease,
+        color 0.25s ease;
+}
+
+/* View Transitions — our JS clip animation handles the actual effect */
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}
+
+::view-transition-new(root) {
+    z-index: 9999;
+}
+
+/* Theme Toggle Icon spin animation */
+@keyframes icon-spin-in {
+    from {
+        transform: rotate(-90deg) scale(0.4);
+        opacity: 0;
+    }
+
+    to {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+    }
+}
+
+.theme-icon-enter {
+    display: inline-flex;
+    animation: icon-spin-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}

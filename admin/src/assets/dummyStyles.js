@@ -1186,6 +1186,8 @@ export const navbarStyles = {
     "flex items-center gap-3 px-3 py-2 border-t border-[#2B0810] mt-2 pt-3",
   mobileThemeToggleBtn:
     "flex p-2.5 rounded-xl text-stone-400 hover:text-[#F5304B] hover:bg-[#2B0810] transition-colors cursor-pointer items-center justify-center",
+  mobileHeaderThemeBtn:
+    "flex lg:hidden items-center justify-center p-2 rounded-lg text-stone-400 hover:text-white hover:bg-[#2B0810] transition-all duration-200 cursor-pointer",
 
   // Mobile Dropdown
   mobileDropdown: "ml-8 flex flex-col gap-1 border-l border-[#7A0F22] pl-2",

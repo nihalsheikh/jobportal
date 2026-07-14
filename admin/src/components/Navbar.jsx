@@ -17,11 +17,14 @@ import {
   LogIn,
   LogOut,
   Menu,
+  Moon,
+  Sun,
   User,
   UserRoundCheck,
   X,
 } from "lucide-react";
 import logoFallback from "../assets/logo.webp";
+import { useTheme } from "../context/ThemeContext.jsx";
 
 const NAV_ITEMS = [
   { key: "dashboard", label: "Dashboard", Icon: House },
@@ -55,6 +58,7 @@ const ROUTES = {
 };
 
 const Navbar = ({ logoSrc, brandName = "Emberly", onNavigate }) => {
+  const { isDarkMode, toggleTheme: onThemeToggle } = useTheme();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -396,6 +400,27 @@ const Navbar = ({ logoSrc, brandName = "Emberly", onNavigate }) => {
             {/* Right side */}
             <div className={s.rightActions}>
               <div className={s.desktopAuth}>
+                {/* Theme Toggle Button */}
+                <button
+                  onClick={onThemeToggle}
+                  className={s.themeToggleBtn}
+                  title={
+                    isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"
+                  }
+                >
+                  <span
+                    key={isDarkMode ? "sun" : "moon"}
+                    className="theme-icon-enter"
+                  >
+                    {isDarkMode ? (
+                      <Sun className={s.themeToggleIcon} />
+                    ) : (
+                      <Moon className={s.themeToggleIcon} />
+                    )}
+                  </span>
+                </button>
+
+                {/* Login/Logout Button */}
                 {user ? (
                   <div
                     ref={userMenuContainerRef}
@@ -458,7 +483,28 @@ const Navbar = ({ logoSrc, brandName = "Emberly", onNavigate }) => {
                 )}
               </div>
 
-              {/* toggle */}
+              {/* Theme Toggle aside burger menu */}
+              {/* Mobile only theme toggle - sits between desktopAuth and hamburger */}
+              <button
+                onClick={onThemeToggle}
+                className={s.mobileHeaderThemeBtn}
+                title={
+                  isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"
+                }
+              >
+                <span
+                  key={isDarkMode ? "sun-top" : "moon-top"}
+                  className="theme-icon-enter"
+                >
+                  {isDarkMode ? (
+                    <Sun className={s.themeToggleIcon} />
+                  ) : (
+                    <Moon className={s.themeToggleIcon} />
+                  )}
+                </span>
+              </button>
+
+              {/* Burger Menu toggle */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className={s.mobileMenuButton}
@@ -515,7 +561,27 @@ const Navbar = ({ logoSrc, brandName = "Emberly", onNavigate }) => {
                   );
                 })}
 
-                {/* mobile user */}
+                {/* Mobile Theme Toggle Inside the Menu */}
+                {/* <button
+                  onClick={onThemeToggle}
+                  className={s.mobileThemeToggleBtn}
+                  title={
+                    isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"
+                  }
+                >
+                  <span
+                    key={isDarkMode ? "sun-m" : "moon-m"}
+                    className="theme-icon-enter"
+                  >
+                    {isDarkMode ? (
+                      <Sun className={s.themeToggleIcon} />
+                    ) : (
+                      <Moon className={s.themeToggleIcon} />
+                    )}
+                  </span>
+                </button> */}
+
+                {/* Mobile Login/Logout */}
                 {user ? (
                   <>
                     <div className={s.mobileUserInfo}>
