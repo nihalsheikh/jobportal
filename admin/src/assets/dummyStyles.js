@@ -117,7 +117,6 @@ export const addJobsPageStyles = {
 };
 
 export const dashboardStyles = {
-  // Main container
   container: "min-h-screen font-sans bg-[#09090B]",
 
   // Toast
@@ -139,170 +138,171 @@ export const dashboardStyles = {
   toastCloseBtn: "ml-2 text-stone-400 hover:text-stone-600",
   toastFlex: "flex-1",
 
-  // Content wrapper
   contentWrapper:
     "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12",
 
   // Header
-  headerContainer:
-    "flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 sm:mb-10 animate-fadeIn",
+  headerContainer: "mb-10 sm:mb-12 animate-fadeIn",
+  headerEyebrow: "inline-flex items-center gap-2 mb-3",
+  headerDot: "w-2 h-2 rounded-full bg-[#F5304B] animate-pulse",
+  headerEyebrowText:
+    "text-xs font-black text-[#F5304B] uppercase tracking-[0.15em]",
   headerTitle:
-    "text-2xl sm:text-3xl md:text-4xl font-bold text-transparent bg-linear-to-r from-stone-200 to-stone-400 bg-clip-text",
-  headerSubtitle:
-    "text-stone-500 mt-2 flex items-center gap-2 text-sm sm:text-sm",
+    "text-3xl sm:text-4xl md:text-5xl font-black text-transparent bg-linear-to-r from-[#F5304B] to-[#D4293F] bg-clip-text tracking-tight leading-[1.1]",
+  headerSubtitle: "text-stone-500 mt-3 flex items-center gap-2 text-sm",
   headerIcon: "w-4 h-4 text-emerald-500",
 
-  // Stats Cards Grid
-  statsGrid:
-    "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10 sm:mb-12",
-
-  // Stats Card
+  // Stats — 2×2 on mobile, 4×1 on desktop
+  statsGrid: "grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10",
   statCard:
-    "group relative bg-white rounded-3xl shadow-[0_2px_8px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-500 hover:scale-[1.02] border border-stone-200 overflow-hidden",
-  statCardOverlay:
-    "absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 -translate-x-full group-hover:translate-x-full transition-all duration-1000 ease-in-out",
-  statCardContent:
-    "relative p-4 sm:p-6 md:p-8 flex items-center justify-between",
-  statCardTextContainer: "space-y-1 sm:space-y-2",
+    "group relative bg-[#131316] rounded-2xl border border-[#2B0810] shadow-[0_2px_10px_rgba(0,0,0,0.35)] hover:shadow-[0_20px_45px_-15px_rgba(0,0,0,0.5)] hover:border-[#7A0F22] transition-all duration-300 hover:-translate-y-1 flex flex-col overflow-hidden",
+  statCardOverlay: "", // kept for backward compat
+  statCardContent: "p-5 sm:p-6 flex items-start justify-between flex-1",
+  statCardTextContainer: "space-y-2 min-w-0",
   statCardLabel:
-    "text-xs sm:text-sm font-medium text-stone-500 uppercase tracking-wider",
-  statCardValue: "text-2xl sm:text-3xl md:text-4xl font-bold text-stone-800",
+    "text-xs font-black text-stone-500 uppercase tracking-[0.12em] leading-none",
+  statCardValue:
+    "text-3xl sm:text-4xl font-black text-stone-100 tabular-nums leading-none pt-1",
   statCardIconWrapper:
-    "p-3 sm:p-4 md:p-4 rounded-3xl shadow-lg transform transition-transform duration-300",
-  statCardIcon: "w-6 h-6 sm:w-8 sm:h-8 text-white",
+    "p-2.5 rounded-xl shadow-lg shadow-black/30 ring-1 ring-black/10 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 flex-shrink-0 ml-3",
+  statCardIcon: "w-5 h-5 sm:w-6 sm:h-6 text-white",
 
-  // Filters Section
+  // Filters
   filtersContainer:
-    "mb-6 sm:mb-8 bg-white rounded-2xl p-4 sm:p-5 md:p-6 shadow-[0_2px_8px_rgba(0,0,0,0.3)] border border-stone-200 animate-fadeIn animation-delay-100",
-  filtersHeader: "flex items-center justify-between flex-wrap gap-3",
-  filtersTitleContainer: "flex items-center gap-3",
-  filtersIcon: "w-4 h-4 text-stone-500",
-  filtersTitle: "text-base sm:text-lg font-semibold text-stone-700",
+    "mb-8 bg-[#131316] rounded-2xl border border-[#2B0810] shadow-[0_2px_10px_rgba(0,0,0,0.35)] overflow-visible animate-fadeIn animation-delay-100",
+  filtersHeader:
+    "flex items-center justify-between px-5 sm:px-6 py-4 border-b border-[#2B0810]",
+  filtersTitleContainer: "flex items-center gap-2",
+  filtersIcon: "w-3.5 h-3.5 text-stone-500",
+  filtersTitle: "text-sm font-bold text-stone-300 tracking-wide",
   filtersClearBtn:
-    "flex items-center gap-2 text-sm text-stone-500 hover:text-stone-700 transition-colors",
-  filtersGrid: "grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-4",
+    "flex items-center gap-1.5 text-xs font-bold text-stone-500 hover:text-[#F5304B] transition-colors",
+  filtersGrid:
+    "grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-stone-100",
 
-  // Filter Input
-  filterInputContainer: "relative",
-  filterLabel: "block text-xs sm:text-xs font-medium text-stone-400 mb-1",
+  filterInputContainer: "px-5 sm:px-6 py-4 relative",
+  filterLabel:
+    "block text-xs font-black text-stone-500 uppercase tracking-[0.12em] mb-2.5",
   filterInputWrapper: "relative",
   filterSearchIcon:
-    "absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400",
+    "absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-stone-500 pointer-events-none z-10",
+  filterChevron:
+    "absolute right-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-stone-300 pointer-events-none",
   filterSelect:
-    "w-full pl-9 pr-3 py-2 sm:py-3 bg-white border border-stone-200 rounded-xl text-sm sm:text-sm text-stone-700 focus:outline-none focus:ring-2 focus:ring-[#7A0F22] appearance-none",
+    "w-full pl-8 pr-9 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-sm text-stone-700 focus:outline-none focus:border-[#F5304B] focus:ring-2 focus:ring-[#F5304B]/10 focus:bg-white appearance-none cursor-pointer transition-all duration-200 hover:border-stone-300 hover:bg-white",
+
+  // Custom dropdown (replaces native <select> so the open menu can be themed)
+  customSelectWrapper: "relative",
+  customSelectButton:
+    "w-full flex items-center justify-between gap-2 pl-8 pr-3 py-2.5 bg-[#131316] border border-[#2B0810] rounded-xl text-sm text-stone-200 focus:outline-none cursor-pointer transition-all duration-200 hover:border-[#7A0F22] hover:bg-[#2B0810]",
+  customSelectButtonOpen:
+    "border-[#F5304B] ring-2 ring-[#F5304B]/20 bg-[#2B0810]",
+  customSelectButtonCompact:
+    "flex items-center gap-2 pl-3 pr-2.5 py-2 bg-[#131316] border border-[#2B0810] rounded-xl text-xs font-bold text-stone-300 cursor-pointer transition-all duration-200 hover:border-[#7A0F22] hover:bg-[#2B0810]",
+  customSelectValue: "truncate text-left",
+  customSelectPlaceholder: "truncate text-left text-stone-500",
+  customSelectChevron:
+    "w-3.5 h-3.5 text-stone-500 shrink-0 transition-transform duration-200",
+  customSelectChevronOpen: "rotate-180 text-[#F5304B]",
+  customSelectPanel:
+    "absolute z-50 mt-2 left-0 right-0 max-h-64 overflow-y-auto rounded-xl border border-[#2B0810] bg-[#131316] shadow-[0_16px_40px_rgba(0,0,0,0.5)] py-1.5 animate-fadeIn",
+  customSelectPanelCompact:
+    "absolute z-50 mt-2 right-0 w-36 rounded-xl border border-[#2B0810] bg-[#131316] shadow-[0_16px_40px_rgba(0,0,0,0.5)] py-1.5 animate-fadeIn",
+  customSelectOptionBase:
+    "flex items-center justify-between gap-2 px-3.5 py-2.5 text-sm cursor-pointer transition-colors duration-150",
+  customSelectOptionInactive:
+    "text-stone-400 hover:bg-[#2B0810] hover:text-stone-100",
+  customSelectOptionActive: "bg-[#2B0810] text-[#D4293F] font-semibold",
+  customSelectOptionDot: "w-1.5 h-1.5 rounded-full bg-[#F5304B] shrink-0",
 
   // Jobs Section
   jobsSection: "animate-fadeIn animation-delay-200",
-  jobsHeader: "flex items-center justify-between mb-5 sm:mb-6",
+  jobsHeader: "flex items-center justify-between mb-5",
   jobsTitle:
-    "text-xl sm:text-2xl font-semibold text-stone-800 flex items-center gap-3",
-  jobsTitleIcon: "w-5 h-5 sm:w-6 sm:h-6 text-stone-600",
-  jobsFilterContainer: "flex items-center gap-3",
+    "text-lg sm:text-xl font-bold text-stone-300 flex items-center gap-2",
+  jobsTitleIcon: "w-4 h-4 text-[#F5304B]",
+  jobsFilterContainer: "flex items-center gap-2.5",
+  jobsStatusSelectWrapper: "relative",
   jobsStatusSelect:
-    "text-xs sm:text-sm font-medium border border-stone-200 rounded-full px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-[#7A0F22] cursor-pointer bg-white",
+    "appearance-none text-xs font-bold border border-stone-200 bg-white text-stone-600 rounded-xl pl-3 pr-7 py-2 focus:outline-none focus:border-[#F5304B] cursor-pointer hover:border-stone-300 transition-colors",
+  jobsStatusChevron:
+    "absolute right-2 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-stone-400 pointer-events-none",
   jobsCount:
-    "text-sm text-stone-400 bg-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-sm border border-stone-200",
+    "text-xs font-bold text-stone-400 bg-[#131316] border border-[#2B0810] px-3 py-2 rounded-xl",
 
   // Loading
-  loadingContainer: "text-center py-20",
+  loadingContainer: "text-center py-24",
   loadingSpinner:
-    "animate-spin rounded-full h-12 w-12 border-b-2 border-[#F5304B] mx-auto",
+    "animate-spin rounded-full h-10 w-10 border-2 border-[#2B0810] border-t-[#F5304B] mx-auto",
 
   // Jobs Grid
-  jobsGrid: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6",
+  jobsGrid: "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4",
 
   // Job Card
   jobCard:
-    "group relative bg-white rounded-2xl shadow-[0_2px_8px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-500 hover:-translate-y-2 border border-stone-200 overflow-hidden",
+    "group relative bg-[#131316] rounded-2xl border border-[#2B0810] shadow-[0_2px_10px_rgba(0,0,0,0.35)] hover:shadow-[0_20px_45px_-15px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-1 overflow-hidden",
+  jobCardAccentBar:
+    "h-0.5 bg-linear-to-r from-[#F5304B] to-[#D4293F] opacity-0 group-hover:opacity-100 transition-opacity duration-300",
   jobCardOverlay:
-    "absolute inset-0 bg-linear-to-br from-[#2B0810]/30 to-[#09090B]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500",
-  jobCardContent: "relative p-4 sm:p-5 md:p-6",
-  jobCardHeader: "flex items-start gap-3 sm:gap-4",
+    "absolute inset-0 bg-linear-to-br from-[#2B0810]/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none",
+  jobCardContent: "relative p-5",
+  jobCardHeader: "flex items-start gap-3.5",
 
-  // Job Logo
-  jobLogoContainer: "relative shrink-0",
+  jobLogoContainer: "shrink-0",
   jobLogoWrapper:
-    "w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-2xl bg-[#09090B] flex items-center justify-center overflow-hidden shadow-md group-hover:shadow-lg transition-shadow border border-stone-200",
+    "w-12 h-12 rounded-xl bg-[#2B0810] border border-[#7A0F22] flex items-center justify-center overflow-hidden",
   jobLogo: "w-full h-full object-cover",
-  jobLogoFallback:
-    "hidden w-full h-full bg-linear-to-br from-stone-200 to-stone-300 items-center justify-center",
-  jobLogoFallbackIcon: "w-5 h-5 sm:w-6 sm:h-6 text-stone-600",
+  jobLogoFallback: "hidden w-full h-full items-center justify-center",
+  jobLogoFallbackIcon: "w-5 h-5 text-stone-400",
 
-  // Job Details
   jobDetails: "flex-1 min-w-0",
   jobRole:
-    "text-base sm:text-lg font-bold text-[#F5304B] group-hover:text-[#D4293F] transition-colors",
-  jobCompany:
-    "text-sm font-medium text-stone-500 flex items-center gap-1 mt-0.5",
-  jobCompanyIcon: "w-3.5 h-3.5 text-stone-400 shrink-0",
-  jobLocation:
-    "text-xs sm:text-sm text-emerald-600 mt-1 flex items-center gap-1",
-  jobLocationIcon: "w-3 h-3 text-emerald-500",
+    "text-sm font-bold text-stone-100 group-hover:text-[#F5304B] transition-colors duration-200 leading-snug",
+  jobCompany: "text-xs text-stone-500 flex items-center gap-1 mt-0.5",
+  jobCompanyIcon: "w-3 h-3 text-stone-500 shrink-0",
+  jobLocation: "text-xs text-emerald-500 mt-1 flex items-center gap-1",
+  jobLocationIcon: "w-3 h-3",
 
-  // Job Meta
-  jobMeta: "mt-4 sm:mt-5 flex items-center justify-between",
+  jobDivider: "my-4 border-t border-[#2B0810]",
+
+  jobMeta: "flex items-center justify-between",
   jobCategory:
-    "inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm font-medium bg-stone-100 text-stone-700 border border-stone-200",
-  jobApplicants: "flex items-center gap-1.5 text-sm",
-  jobApplicantsIcon: "w-4 h-4 text-stone-400",
-  jobApplicantsCount: "font-semibold text-stone-700",
-  jobApplicantsLabel: "text-stone-400 text-xs",
+    "inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold bg-[#2B0810] text-[#D4293F]",
+  jobApplicants: "flex items-center gap-1.5",
+  jobApplicantsIcon: "w-3.5 h-3.5 text-stone-500",
+  jobApplicantsCount: "text-sm font-bold text-stone-200",
+  jobApplicantsLabel: "text-xs text-stone-500",
 
-  // Job Actions
-  jobActions:
-    "relative pt-4 flex items-center justify-center gap-3 duration-300 pointer-events-none",
+  jobActions: "mt-4 flex items-center gap-2",
   viewApplicantsBtn:
-    "pointer-events-auto bg-linear-to-r from-[#F5304B] to-[#D4293F] text-white cursor-pointer px-4 py-1.5 rounded-full text-xs font-semibold shadow-lg hover:shadow-xl transform transition-all hover:scale-105",
+    "flex-1 text-center py-2.5 px-3 rounded-xl bg-[#F5304B] text-white text-xs font-bold hover:bg-[#D4293F] active:scale-[0.98] cursor-pointer transition-all shadow-sm hover:shadow-lg hover:shadow-[#F5304B]/20",
   closeJobBtn:
-    "pointer-events-auto bg-linear-to-r from-rose-500 to-pink-500 text-white cursor-pointer px-4 py-1.5 rounded-full text-xs font-semibold shadow-lg hover:shadow-xl transform transition-all hover:scale-105",
+    "flex-1 text-center py-2.5 px-3 rounded-xl bg-[#2B0810] text-[#D4293F] hover:bg-[#7A0F22] active:scale-[0.98] cursor-pointer transition-colors text-xs font-bold",
 
   // Empty State
   emptyState:
-    "text-center py-12 sm:py-16 bg-white rounded-3xl border border-stone-200",
-  emptyStateIcon: "w-12 h-12 text-stone-300 mx-auto mb-4",
-  emptyStateTitle: "text-lg font-medium text-stone-600",
-  emptyStateText: "text-sm text-stone-400 mt-1",
+    "text-center py-16 sm:py-24 bg-[#131316] rounded-2xl border border-dashed border-[#2B0810]",
+  emptyStateIconWrapper:
+    "w-14 h-14 bg-[#2B0810] rounded-2xl flex items-center justify-center mx-auto mb-4",
+  emptyStateIcon: "w-7 h-7 text-stone-500",
+  emptyStateTitle: "text-base font-bold text-stone-300",
+  emptyStateText: "text-sm text-stone-500 mt-1",
   emptyStateBtn:
-    "mt-4 px-6 py-2 bg-[#2B0810] text-[#D4293F] rounded-full text-sm font-medium hover:bg-[#7A0F22] transition-colors",
+    "mt-5 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#2B0810] text-[#D4293F] border border-[#7A0F22] text-sm font-bold hover:bg-[#7A0F22] transition-colors cursor-pointer",
 
-  // Animation styles (will be injected separately)
   animations: `
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
-    .animate-fadeIn {
-      animation: fadeIn 0.8s ease-out forwards;
-    }
-    .animation-delay-100 {
-      animation-delay: 0.1s;
-      opacity: 0;
-      animation-fill-mode: forwards;
-    }
-    .animation-delay-200 {
-      animation-delay: 0.2s;
-      opacity: 0;
-      animation-fill-mode: forwards;
-    }
+    .animate-fadeIn { animation: fadeIn 0.5s ease-out forwards; }
+    .animation-delay-100 { animation-delay: 0.1s; opacity: 0; animation-fill-mode: forwards; }
+    .animation-delay-200 { animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards; }
     @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateX(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
+      from { opacity: 0; transform: translateX(20px); }
+      to   { opacity: 1; transform: translateX(0); }
     }
-    .animate-slideIn {
-      animation: slideIn 0.3s ease-out forwards;
-    }
+    .animate-slideIn { animation: slideIn 0.3s ease-out forwards; }
   `,
 };
 
@@ -310,19 +310,27 @@ export const dashboardStyles = {
 export const statColors = {
   blue: {
     gradient: "from-[#F5304B] to-[#D4293F]",
-    bgLight: "bg-[#2B0810]",
+    bgLight: "bg-linear-to-br from-[#F5304B] to-[#D4293F]",
+    barColor: "bg-[#F5304B]",
+    hoverGlow: "group-hover:shadow-[0_20px_45px_-15px_rgba(245,48,75,0.45)]",
   },
   rose: {
     gradient: "from-rose-500 to-pink-400",
-    bgLight: "bg-rose-50",
+    bgLight: "bg-linear-to-br from-rose-500 to-pink-400",
+    barColor: "bg-rose-500",
+    hoverGlow: "group-hover:shadow-[0_20px_45px_-15px_rgba(244,63,94,0.45)]",
   },
   emerald: {
     gradient: "from-emerald-500 to-teal-400",
-    bgLight: "bg-emerald-50",
+    bgLight: "bg-linear-to-br from-emerald-500 to-teal-400",
+    barColor: "bg-emerald-500",
+    hoverGlow: "group-hover:shadow-[0_20px_45px_-15px_rgba(16,185,129,0.45)]",
   },
   amber: {
     gradient: "from-amber-500 to-orange-400",
-    bgLight: "bg-amber-50",
+    bgLight: "bg-linear-to-br from-amber-500 to-orange-400",
+    barColor: "bg-amber-500",
+    hoverGlow: "group-hover:shadow-[0_20px_45px_-15px_rgba(245,158,11,0.45)]",
   },
 };
 

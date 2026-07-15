@@ -484,7 +484,6 @@ const Navbar = ({ logoSrc, brandName = "Emberly", onNavigate }) => {
               </div>
 
               {/* Theme Toggle aside burger menu */}
-              {/* Mobile only theme toggle - sits between desktopAuth and hamburger */}
               <button
                 onClick={onThemeToggle}
                 className={s.mobileHeaderThemeBtn}
@@ -560,26 +559,6 @@ const Navbar = ({ logoSrc, brandName = "Emberly", onNavigate }) => {
                     </div>
                   );
                 })}
-
-                {/* Mobile Theme Toggle Inside the Menu */}
-                {/* <button
-                  onClick={onThemeToggle}
-                  className={s.mobileThemeToggleBtn}
-                  title={
-                    isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"
-                  }
-                >
-                  <span
-                    key={isDarkMode ? "sun-m" : "moon-m"}
-                    className="theme-icon-enter"
-                  >
-                    {isDarkMode ? (
-                      <Sun className={s.themeToggleIcon} />
-                    ) : (
-                      <Moon className={s.themeToggleIcon} />
-                    )}
-                  </span>
-                </button> */}
 
                 {/* Mobile Login/Logout */}
                 {user ? (

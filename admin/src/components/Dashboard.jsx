@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { dashboardStyles as s, statColors } from "../assets/dummyStyles.js";
 import { useNavigate } from "react-router-dom";
+import CustomSelect from "../components/CustomSelect.jsx";
 import {
   BriefcaseBusiness,
   Building2,
@@ -15,7 +16,6 @@ import {
 } from "lucide-react";
 
 const Dashboard = () => {
-  // toast hooks
   const [companyFilter, setCompanyFilter] = useState("");
   const [roleFilter, setRoleFilter] = useState("");
   const [statusFilter, setStatusFilter] = useState("active");
@@ -284,10 +284,11 @@ const Dashboard = () => {
         </div>
       )}
 
+      {/* Header */}
       <div className={s.contentWrapper}>
         <div className={s.headerContainer}>
           <div>
-            <h1 className={s.headerTitle}>Emberly Dashboard</h1>
+            <h1 className={s.headerTitle}>Emberly Admin Dashboard</h1>
             <p className={s.headerSubtitle}>
               <TrendingUp className={s.headerIcon} />
               <span>Real-time overview of jobs and applicants</span>
@@ -301,7 +302,10 @@ const Dashboard = () => {
             const Icon = stat.icon;
 
             return (
-              <div key={stat.label} className={s.statCard}>
+              <div
+                key={stat.label}
+                className={`${s.statCard} ${stat.colors.hoverGlow}`}
+              >
                 <div className={s.statCardOverlay}></div>
                 <div className={s.statCardContent}>
                   <div className={s.statCardTextContainer}>
@@ -310,9 +314,7 @@ const Dashboard = () => {
                   </div>
 
                   <div
-                    className={`
-                      ${s.statCardIconWrapper}
-                      ${stat.colors.bgLight} bg-linear-to-br ${stat.colors.gradient}`}
+                    className={`${s.statCardIconWrapper} ${stat.colors.bgLight}`}
                   >
                     <Icon className={s.statCardIcon} strokeWidth={1.8} />
                   </div>
@@ -339,48 +341,42 @@ const Dashboard = () => {
           </div>
 
           <div className={s.filtersGrid}>
+            {/* Company Filter */}
             <div className={s.filterInputContainer}>
-              <label className={s.filterLabel}>Filter by Company</label>
-              <div className={s.filterInputWrapper}>
-                <Search className={s.filterSearchIcon} />
-                <select
-                  value={companyFilter}
-                  onChange={(e) => setCompanyFilter(e.target.value)}
-                  className={s.filterSelect}
-                >
-                  <option value="">All Companies</option>
-                  {uniqueCompanies.map((company) => (
-                    <option key={company} value={company}>
-                      {company}
-                    </option>
-                  ))}
-                </select>
-              </div>
+              <label className={s.filterLabel}>Company</label>
+              <CustomSelect
+                icon={Search}
+                value={companyFilter}
+                onChange={setCompanyFilter}
+                placeholder="All Companies"
+                options={[
+                  { value: "", label: "All Companies" },
+                  ...uniqueCompanies.map((company) => ({
+                    value: company,
+                    label: company,
+                  })),
+                ]}
+              />
             </div>
 
             {/* Role Filter */}
             <div className={s.filterInputContainer}>
-              <label className={s.filterLabel}>Filter by Role</label>
-              <div className={s.filterInputWrapper}>
-                <Search className={s.filterSearchIcon} />
-                <select
-                  value={roleFilter}
-                  onChange={(e) => setRoleFilter(e.target.value)}
-                  className={s.filterSelect}
-                >
-                  <option value="">All Roles</option>
-                  {uniqueRoles.map((role) => (
-                    <option key={role} value={role}>
-                      {role}
-                    </option>
-                  ))}
-                </select>
-              </div>
+              <label className={s.filterLabel}>Role</label>
+              <CustomSelect
+                icon={Search}
+                value={roleFilter}
+                onChange={setRoleFilter}
+                placeholder="All Roles"
+                options={[
+                  { value: "", label: "All Roles" },
+                  ...uniqueRoles.map((role) => ({ value: role, label: role })),
+                ]}
+              />
             </div>
           </div>
         </div>
 
-        {/* Companies Section */}
+        {/* Jobs Section */}
         <div className={s.jobsSection}>
           <div className={s.jobsHeader}>
             <h2 className={s.jobsTitle}>
@@ -393,18 +389,19 @@ const Dashboard = () => {
             </h2>
 
             <div className={s.jobsFilterContainer}>
-              <select
+              <CustomSelect
+                compact
                 value={statusFilter}
-                onChange={(e) => setStatusFilter(e.target.value)}
-                className={s.jobsStatusSelect}
-              >
-                <option value="active">Active Jobs</option>
-                <option value="closed">Closed Jobs</option>
-                <option value="all">All Jobs</option>
-              </select>
+                onChange={setStatusFilter}
+                options={[
+                  { value: "active", label: "Active" },
+                  { value: "closed", label: "Closed" },
+                  { value: "all", label: "All" },
+                ]}
+              />
 
               <div className={s.jobsCount}>
-                {filteredJobs.length}{" "}
+                {filteredJobs.length}&nbsp;
                 {filteredJobs.length === 1 ? "job" : "jobs"}
               </div>
             </div>
@@ -419,7 +416,8 @@ const Dashboard = () => {
             <div className={s.jobsGrid}>
               {filteredJobs.map((job) => (
                 <div key={job.id} className={s.jobCard}>
-                  <div className={s.jobCardOverlay}></div>
+                  <div className={s.jobCardAccentBar} />
+                  <div className={s.jobCardOverlay} />
 
                   <div className={s.jobCardContent}>
                     <div className={s.jobCardHeader}>
@@ -454,6 +452,8 @@ const Dashboard = () => {
                       </div>
                     </div>
 
+                    <div className={s.jobDivider} />
+
                     <div className={s.jobMeta}>
                       <span className={s.jobCategory}>{job.category}</span>
                       <div className={s.jobApplicants}>
@@ -462,7 +462,7 @@ const Dashboard = () => {
                           {job.applicants}
                         </span>
 
-                        <span className={s.jobApplicantsLabel}>Applicants</span>
+                        <span className={s.jobApplicantsLabel}>applicants</span>
                       </div>
                     </div>
 
@@ -496,9 +496,13 @@ const Dashboard = () => {
             </div>
           ) : (
             <div className={s.emptyState}>
-              <Building2 className={s.emptyStateIcon} />
+              <div className={s.emptyStateIconWrapper}>
+                <Building2 className={s.emptyStateIcon} />
+              </div>
               <h3 className={s.emptyStateTitle}>No matching jobs found</h3>
-              <p className={s.emptyStateText}>Try adjusting your filters</p>
+              <p className={s.emptyStateText}>
+                Try adjusting your filters above
+              </p>
               <button onClick={clearFilters} className={s.emptyStateBtn}>
                 Clear Filters
               </button>
