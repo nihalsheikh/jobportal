@@ -3,16 +3,16 @@ export const addJobsPageStyles = {
   // Toast
   toastWrapper: "fixed top-4 right-2 sm:right-4 z-50 animate-slide-in",
   toastContent:
-    "flex items-center gap-3 px-4 sm:px-5 py-3 sm:py-4 rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.45)] border-l-4 backdrop-blur-sm bg-white border-stone-200",
-  toastSuccess: "border-emerald-400",
-  toastError: "border-rose-400",
+    "flex items-center gap-3 px-4 sm:px-5 py-3 sm:py-4 rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.45)] border-l-4 backdrop-blur-sm border-transparent",
+  toastSuccess: "bg-[#064e3b] text-white border-emerald-400",
+  toastError: "bg-[#7a0f22] text-white border-rose-500",
   toastDot: "w-3 h-3 rounded-full animate-ping",
-  toastDotSuccess: "bg-emerald-500",
-  toastDotError: "bg-rose-500",
+  toastDotSuccess: "bg-emerald-400",
+  toastDotError: "bg-rose-400",
   toastDotStatic: "absolute inset-0 w-3 h-3 rounded-full",
-  toastMessage: "font-semibold text-sm sm:text-base text-stone-700",
+  toastMessage: "font-semibold text-sm sm:text-base text-white",
   toastCloseBtn:
-    "ml-3 sm:ml-4 text-stone-400 hover:text-stone-600 hover:rotate-90 transition-transform duration-300",
+    "ml-3 sm:ml-4 text-white/70 hover:text-white hover:rotate-90 transition-transform duration-300",
 
   // AnimatedField
   fieldContainer: "space-y-2 w-full",
@@ -122,20 +122,20 @@ export const dashboardStyles = {
   // Toast
   toastWrapper: "fixed top-6 right-6 z-50 animate-slideIn",
   toastBase:
-    "flex items-center gap-3 px-4 py-3 rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.45)] border-l-4 bg-white",
-  toastSuccess: "border-emerald-400 text-emerald-800",
-  toastError: "border-rose-400 text-rose-800",
-  toastDefault: "border-stone-300 text-stone-800",
-  toastIconSuccess: "text-emerald-600",
-  toastIconError: "text-rose-600",
-  toastIconDefault: "text-stone-500",
-  toastMessage: "font-semibold text-sm text-stone-700",
+    "flex items-center gap-3 px-4 py-3 rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.45)] border-l-4",
+  toastSuccess: "bg-[#064e3b] text-white border-emerald-400",
+  toastError: "bg-[#7a0f22] text-white border-rose-500",
+  toastDefault: "bg-stone-900 text-stone-100 border-stone-600",
+  toastIconSuccess: "text-emerald-400",
+  toastIconError: "text-rose-400",
+  toastIconDefault: "text-stone-400",
+  toastMessage: "font-semibold text-sm text-white",
   toastButtonContainer: "mt-3 flex gap-2",
   toastConfirmBtn:
     "px-4 py-1.5 rounded-full bg-rose-500 text-white text-xs font-bold hover:bg-rose-600 transition-all shadow-md active:scale-95 cursor-pointer",
   toastCancelBtn:
     "px-4 py-1.5 rounded-full bg-stone-100 text-stone-600 text-xs font-bold hover:bg-stone-200 transition-all cursor-pointer",
-  toastCloseBtn: "ml-2 text-stone-400 hover:text-stone-600",
+  toastCloseBtn: "ml-2 text-white/70 hover:text-white",
   toastFlex: "flex-1",
 
   contentWrapper:
@@ -155,21 +155,21 @@ export const dashboardStyles = {
   // Stats — 2×2 on mobile, 4×1 on desktop
   statsGrid: "grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10",
   statCard:
-    "group relative bg-[#131316] rounded-2xl border border-[#2B0810] shadow-[0_2px_10px_rgba(0,0,0,0.35)] hover:shadow-[0_20px_45px_-15px_rgba(0,0,0,0.5)] hover:border-[#7A0F22] transition-all duration-300 hover:-translate-y-1 flex flex-col overflow-hidden",
+    "group relative bg-[#131316] rounded-2xl border border-[#2B0810] shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#7A0F22] hover:shadow-[0_12px_24px_rgba(245,48,75,0.06)] dark:hover:shadow-[0_12px_24px_rgba(245,48,75,0.18)] flex flex-col overflow-hidden",
   statCardOverlay: "", // kept for backward compat
   statCardContent: "p-5 sm:p-6 flex items-start justify-between flex-1",
   statCardTextContainer: "space-y-2 min-w-0",
   statCardLabel:
     "text-xs font-black text-stone-500 uppercase tracking-[0.12em] leading-none",
   statCardValue:
-    "text-3xl sm:text-4xl font-black text-stone-100 tabular-nums leading-none pt-1",
+    "text-3xl sm:text-4xl font-black text-stone-950 dark:text-stone-100 tabular-nums leading-none pt-1",
   statCardIconWrapper:
-    "p-2.5 rounded-xl shadow-lg shadow-black/30 ring-1 ring-black/10 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 flex-shrink-0 ml-3",
+    "p-2.5 rounded-xl shadow-md group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 flex-shrink-0 ml-3",
   statCardIcon: "w-5 h-5 sm:w-6 sm:h-6 text-white",
 
   // Filters
   filtersContainer:
-    "mb-8 bg-[#131316] rounded-2xl border border-[#2B0810] shadow-[0_2px_10px_rgba(0,0,0,0.35)] overflow-visible animate-fadeIn animation-delay-100",
+    "relative z-20 mb-8 bg-[#131316] rounded-2xl border border-[#2B0810] shadow-[0_2px_10px_rgba(0,0,0,0.35)] overflow-visible animate-fadeIn animation-delay-100",
   filtersHeader:
     "flex items-center justify-between px-5 sm:px-6 py-4 border-b border-[#2B0810]",
   filtersTitleContainer: "flex items-center gap-2",
@@ -243,8 +243,7 @@ export const dashboardStyles = {
     "group relative bg-[#131316] rounded-2xl border border-[#2B0810] shadow-[0_2px_10px_rgba(0,0,0,0.35)] hover:shadow-[0_20px_45px_-15px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-1 overflow-hidden",
   jobCardAccentBar:
     "h-0.5 bg-linear-to-r from-[#F5304B] to-[#D4293F] opacity-0 group-hover:opacity-100 transition-opacity duration-300",
-  jobCardOverlay:
-    "absolute inset-0 bg-linear-to-br from-[#2B0810]/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none",
+  jobCardOverlay: "absolute inset-0 bg-transparent pointer-events-none",
   jobCardContent: "relative p-5",
   jobCardHeader: "flex items-start gap-3.5",
 
@@ -342,21 +341,21 @@ export const companiesPageStyles = {
   // Toast
   toastWrapper: "fixed top-6 right-6 z-50 animate-slideIn",
   toastBase:
-    "flex items-center gap-3 px-4 py-3 rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.45)] border-l-4 bg-white",
-  toastSuccess: "border-emerald-400 text-emerald-800",
-  toastError: "border-rose-400 text-rose-800",
-  toastConfirm: "border-stone-300 text-stone-800",
-  toastIconSuccess: "text-emerald-600",
-  toastIconError: "text-rose-600",
+    "flex items-center gap-3 px-4 py-3 rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.45)] border-l-4",
+  toastSuccess: "bg-[#064e3b] text-white border-emerald-400",
+  toastError: "bg-[#7a0f22] text-white border-rose-500",
+  toastConfirm: "bg-stone-900 text-stone-100 border-stone-600",
+  toastIconSuccess: "text-emerald-400",
+  toastIconError: "text-rose-400",
   toastIconConfirm: "text-stone-400",
   toastContent: "flex-1",
-  toastMessage: "font-medium text-stone-700",
+  toastMessage: "font-medium text-white",
   toastActionRow: "mt-2 flex gap-2",
   toastConfirmBtn:
     "inline-flex cursor-pointer items-center gap-2 px-3 py-1.5 rounded-lg bg-red-600 text-white text-sm hover:bg-red-700 transition-shadow shadow-sm",
   toastCancelBtn:
     "inline-flex cursor-pointer items-center gap-2 px-3 py-1.5 rounded-lg bg-stone-100 text-stone-700 text-sm hover:bg-stone-200 transition",
-  toastCloseBtn: "ml-4 text-stone-500 hover:text-stone-700",
+  toastCloseBtn: "ml-4 text-white/70 hover:text-white",
 
   // Header
   header: "text-center mb-10",
@@ -378,7 +377,7 @@ export const companiesPageStyles = {
     "relative w-16 h-16 sm:w-20 md:w-24 rounded-xl overflow-hidden border-2 border-[#7A0F22] shadow-md bg-[#09090B]",
   previewImage: "w-full h-full object-contain",
   removeLogoBtn:
-    "absolute top-1 cursor-pointer right-1 bg-rose-500 text-white rounded-full p-0.5 shadow hover:bg-rose-600",
+    "absolute top-1 cursor-pointer right-1 bg-rose-50 text-white rounded-full p-0.5 shadow hover:bg-rose-600",
   placeholderBox:
     "w-16 h-16 sm:w-20 md:w-24 cursor-pointer rounded-xl bg-[#09090B] border-2 border-dashed border-stone-300 flex items-center justify-center text-stone-400",
   uploadArea: "flex-1",
@@ -428,13 +427,13 @@ export const companyQuestionPageStyles = {
   // Toast
   toastWrapper: "fixed top-6 right-6 z-50 animate-slideIn",
   toastBase:
-    "flex items-center gap-3 px-4 py-3 rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.45)] border-l-4 bg-white",
-  toastSuccess: "border-emerald-400 text-emerald-800",
-  toastError: "border-rose-400 text-rose-800",
-  toastIconSuccess: "text-emerald-600",
-  toastIconError: "text-rose-600",
-  toastMessage: "font-medium text-stone-700",
-  toastCloseBtn: "ml-4 text-stone-500 hover:text-stone-700",
+    "flex items-center gap-3 px-4 py-3 rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.45)] border-l-4",
+  toastSuccess: "bg-[#064e3b] text-white border-emerald-400",
+  toastError: "bg-[#7a0f22] text-white border-rose-500",
+  toastIconSuccess: "text-emerald-400",
+  toastIconError: "text-rose-400",
+  toastMessage: "font-medium text-white",
+  toastCloseBtn: "ml-4 text-white/70 hover:text-white",
 
   // Header
   header: "text-center mb-8",
@@ -602,22 +601,22 @@ export const listCompanyQuestionStyles = {
   toastVisible: "translate-y-0 opacity-100",
   toastHidden: "translate-y-2 opacity-0",
   toastContainer:
-    "rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.45)] overflow-hidden bg-white border border-stone-200",
-  toastSuccess: "bg-emerald-50 border-l-4 border-emerald-400",
-  toastError: "bg-rose-50 border-l-4 border-rose-400",
-  toastConfirm: "bg-[#2B0810] border-l-4 border-[#F5304B]",
+    "rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.45)] overflow-hidden border border-stone-200",
+  toastSuccess: "bg-[#064e3b] text-white border-l-4 border-emerald-400",
+  toastError: "bg-[#7a0f22] text-white border-l-4 border-rose-500",
+  toastConfirm: "bg-[#2B0810] text-white border-l-4 border-[#F5304B]",
   toastContent: "p-3 flex items-start gap-3",
-  toastIconSuccess: "h-5 w-5 text-emerald-500",
-  toastIconError: "h-5 w-5 text-rose-500",
+  toastIconSuccess: "h-5 w-5 text-emerald-400",
+  toastIconError: "h-5 w-5 text-rose-400",
   toastIconConfirm: "h-5 w-5 text-[#F5304B]",
   toastMessageContainer: "flex-1",
-  toastMessage: "text-sm text-stone-700",
+  toastMessage: "text-sm text-white",
   toastConfirmButtons: "mt-2 flex gap-2",
   toastConfirmBtn:
     "px-3 cursor-pointer py-1 bg-rose-500 text-white rounded text-sm",
   toastCancelBtn:
     "px-3 cursor-pointer py-1 bg-stone-200 text-stone-800 rounded text-sm",
-  toastCloseBtn: "text-stone-400 hover:text-stone-600",
+  toastCloseBtn: "text-white/70 hover:text-white",
 
   // Modal
   modalOverlay:
@@ -658,7 +657,7 @@ export const listCompanyQuestionStyles = {
   csvFileName: "text-sm truncate text-stone-600",
   csvRemoveBtn: "p-1 text-rose-500",
   csvUploadLabel:
-    "flex flex-col items-center justify-center w-full h-24 border-2 border-dashed border-stone-300 rounded-lg cursor-pointer hover:bg-[#09090B] hover:border-[#D4293F]",
+    "flex flex-col items-center justify-center w-full h-24 border-2 border-dashed border-[#C8102E] rounded-lg cursor-pointer hover:bg-[#09090B] hover:border-[#D4293F]",
   csvUploadContent: "flex flex-col items-center justify-center pt-4 pb-4",
   csvUploadIcon: "w-6 h-6 text-stone-400 mb-1",
   csvUploadText: "text-xs text-stone-500",
@@ -681,15 +680,15 @@ export const listRoleQuestionStyles = {
   // Success/Info Toast
   baseToast:
     "flex items-center space-x-2 px-4 py-3 rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.45)] text-white transform transition-all duration-300 ease-out animate-slide-in-right",
-  toastSuccess: "bg-linear-to-r from-green-500 to-green-600",
-  toastInfo: "bg-linear-to-r from-[#F5304B] to-[#D4293F]",
+  toastSuccess: "bg-[#064e3b] border-l-4 border-emerald-400 text-white",
+  toastInfo: "bg-[#7a0f22] border-l-4 border-rose-500 text-white",
   toastMessage: "text-sm font-medium",
 
   // Delete Confirmation Toast
   confirmToastContainer:
     "bg-white rounded-lg shadow-[0_12px_40px_rgba(0,0,0,0.5)] border border-stone-200 p-4 flex items-center space-x-4 min-w-70 sm:min-w-[320px] animate-slide-in-right",
   confirmIconWrapper: "shrink-0",
-  confirmIcon: "w-6 h-6 text-[#F5304B]",
+  confirmIcon: "w-6 h-6 text-[#C8102E]",
   confirmContent: "flex-1",
   confirmTitle: "text-sm font-medium text-stone-900",
   confirmSubtitle: "text-xs text-stone-500 mt-1",
@@ -977,12 +976,12 @@ export const listJobsStyles = {
   // Toast
   toastContainer: "fixed right-6 bottom-6 z-50 animate-slideUp",
   toastContent:
-    "flex items-center gap-3 px-4 py-3 rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.45)] border-l-4 bg-white",
-  toastSuccess: "border-emerald-400 text-emerald-800",
-  toastError: "border-rose-400 text-rose-800",
-  toastIconSuccess: "text-emerald-600",
-  toastIconError: "text-rose-600",
-  toastText: "font-medium text-stone-700",
+    "flex items-center gap-3 px-4 py-3 rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.45)] border-l-4",
+  toastSuccess: "bg-[#064e3b] text-white border-emerald-400",
+  toastError: "bg-[#7a0f22] text-white border-rose-500",
+  toastIconSuccess: "text-emerald-400",
+  toastIconError: "text-rose-400",
+  toastText: "font-medium text-white",
 
   // Animations
   animations: `
@@ -1007,56 +1006,79 @@ export const getBadgeClasses = (variant, baseClass) => {
 export const loginPageStyles = {
   // Layout
   pageContainer:
-    "min-h-screen font-sans bg-[#09090B] flex items-center justify-center p-4",
+    "min-h-screen w-full flex flex-col justify-between relative overflow-hidden bg-gradient-to-b from-[#C8102E] to-[#E53935] font-sans antialiased selection:bg-rose-500/30 selection:text-rose-950",
 
   // Toast
   toastContainer:
-    "fixed top-6 right-4 flex items-center gap-3 bg-white rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.45)] p-4 border-l-4 min-w-75 animate-slideInRight z-50",
-  toastBorderSuccess: "border-emerald-400",
-  toastBorderError: "border-rose-400",
-  toastIconSuccess: "text-emerald-500",
-  toastIconError: "text-rose-500",
-  toastMessage: "flex-1 text-stone-700",
-  toastCloseBtn:
-    "text-stone-400 hover:text-stone-600 transition-transform hover:scale-110",
+    "fixed top-5 right-5 flex items-center gap-3 rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.08)] p-4 border-l-4 w-80 z-50 animate-fade-in",
+  toastBorderSuccess: "bg-[#064e3b] text-white border-emerald-400",
+  toastBorderError: "bg-[#7a0f22] text-white border-rose-400",
+  toastIconSuccess: "text-emerald-400 shrink-0",
+  toastIconError: "text-rose-400 shrink-0",
+  toastMessage: "flex-1 text-white text-sm font-medium",
+  toastCloseBtn: "text-white/70 hover:text-white transition-colors shrink-0",
 
-  // Card
-  card: "bg-white rounded-2xl shadow-[0_2px_8px_rgba(0,0,0,0.3)] w-full max-w-md p-8 transform transition-all duration-300 border border-stone-200",
+  // Card Outer Ring
+  cardContainer:
+    "relative w-full max-w-[460px] p-2 bg-white/5 backdrop-blur-[2px] rounded-[32px] shadow-2xl transition-all duration-300 hover:shadow-[0_30px_60px_-15px_rgba(200,16,46,0.2)] border border-white/10",
 
-  // Header
-  header: "text-center mb-8",
-  title: "text-3xl font-bold text-stone-200 animate-fadeInDown",
-  subtitle: "text-stone-500 mt-2 animate-fadeInUp",
+  // Card Inner
+  card: "bg-white rounded-[24px] p-8 md:p-10 flex flex-col items-center w-full relative z-10 border border-white/20",
+
+  // Logo Container
+  logoSection: "mb-6 flex justify-center items-center",
+
+  // Subtitle
+  subtitle:
+    "text-gray-500 text-[14px] font-medium tracking-tight mb-8 text-center",
 
   // Form
-  form: "space-y-6",
+  form: "w-full",
 
-  // Form Group
-  formGroup: "group",
-  label:
-    "block text-sm font-medium text-stone-700 mb-2 transition-colors group-focus-within:text-[#F5304B]",
+  // Input styling
+  labelRow: "flex justify-between items-center mb-2",
+  label: "font-semibold text-gray-800 text-[13px]",
+  helperLink:
+    "text-[13px] text-gray-500 hover:text-[#C8102E] hover:underline transition-colors focus:outline-none cursor-pointer",
 
-  // Input Wrapper
-  inputWrapper: "relative",
-  iconWrapper:
-    "absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none",
-  iconDefault:
-    "text-stone-400 group-focus-within:text-[#F5304B] transition-colors",
-
-  // Input Base
+  inputWrapper: "relative mb-4",
   inputBase:
-    "block w-full pl-10 py-3 bg-[#09090B] border border-stone-200 rounded-lg focus:outline-none focus:shadow-lg focus:shadow-[#7A0F22]/30 transition-all duration-300 ease-in-out text-stone-200 placeholder-stone-500",
-  inputPr3: "pr-3",
-  inputPr12: "pr-12",
+    "w-full px-4 py-3 border border-gray-200 rounded-xl text-gray-800 text-[15px] placeholder-gray-400 focus:outline-none focus:border-[#C8102E] focus:ring-4 focus:ring-[#C8102E]/10 transition-all duration-200",
+  inputPr12: "pr-11",
 
-  // Password Toggle
-  eyeButtonWrapper: "absolute inset-y-0 right-0 pr-3 flex items-center",
-  eyeButton: "p-1 rounded-md cursor-pointer text-[#F5304B]",
+  // Eye toggle
+  eyeButtonWrapper: "absolute inset-y-0 right-0 pr-3.5 flex items-center",
+  eyeButton:
+    "p-1 rounded-lg cursor-pointer text-gray-400 hover:text-[#C8102E] transition-colors focus:outline-none",
 
-  // Submit Button
+  // Buttons
   submitBtn:
-    "w-full flex items-center justify-center gap-2 bg-linear-to-r from-[#F5304B] to-[#D4293F] hover:from-[#D4293F] hover:to-[#7A0F22] text-white font-semibold py-3 px-4 rounded-full transform transition-all duration-300 cursor-pointer hover:shadow-2xl hover:shadow-[#F5304B]/30 focus:outline-none focus:ring-4 focus:ring-[#7A0F22]",
-  submitIcon: "transition-transform",
+    "w-full font-semibold py-3 px-4 rounded-xl transition-all duration-200 text-[14px] flex items-center justify-center gap-2 mb-6 cursor-pointer",
+  submitBtnActive: "bg-black text-white hover:bg-zinc-800 active:scale-[0.98]",
+  submitBtnDisabled: "bg-zinc-100 text-zinc-400 cursor-not-allowed",
+
+  // Footer inside card
+  cardFooter: "flex justify-between w-full mt-8 border-t border-gray-100 pt-5",
+  footerLink:
+    "text-[12px] text-gray-400 hover:text-gray-600 transition-colors focus:outline-none cursor-pointer",
+
+  // Animations
+  animations: `
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scaleUp {
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .animate-scale-up {
+      animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+  `,
 };
 
 export const navbarStyles = {
@@ -1116,11 +1138,12 @@ export const navbarStyles = {
     "absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 bg-white",
   dropdownContent: "rounded-xl p-0.5",
   dropdownInner:
-    "bg-white rounded-lg shadow-[0_12px_40px_rgba(0,0,0,0.5)] border border-stone-200 overflow-hidden min-w-55",
+    "bg-white dark:bg-[#131316] rounded-lg shadow-[0_12px_40px_rgba(0,0,0,0.08)] dark:shadow-[0_12px_40px_rgba(0,0,0,0.5)] border border-stone-200/80 dark:border-[#2B0810] overflow-hidden min-w-55",
   dropdownItem:
     "w-full text-left px-4 py-2.5 text-sm transition-all flex items-center gap-2",
   dropdownItemActive: "bg-[#2B0810] text-[#D4293F] font-medium",
-  dropdownItemInactive: "text-stone-700 hover:bg-[#09090B]",
+  dropdownItemInactive:
+    "text-stone-700 dark:text-stone-300 hover:bg-rose-50 dark:hover:bg-[#2B0810]/50 hover:text-rose-600 dark:hover:text-[#F5304B]",
   dropdownItemDot: "w-2 h-2 rounded-full bg-[#F5304B]",
 
   // Right Side Actions
@@ -1135,19 +1158,21 @@ export const navbarStyles = {
   // User Menu
   userMenuContainer: "relative",
   userMenuButton:
-    "flex items-center gap-2 px-3 py-2 rounded-full bg-[#2B0810] text-stone-100 cursor-pointer transition-all duration-200 hover:bg-[#7A0F22]",
-  userIcon: "w-5 h-5 text-[#F5304B]",
-  userName: "text-sm font-medium max-w-28 truncate",
-  userDropdownIcon: "w-4 h-4 text-stone-400",
+    "flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#2B0810] border border-[#2B0810] text-stone-900 dark:text-rose-100 cursor-pointer transition-all duration-300 hover:opacity-90 shadow-xs font-semibold",
+  userIcon: "w-5 h-5 text-[#F5304B] group-hover:scale-105 transition-transform",
+  userName:
+    "text-sm font-semibold max-w-28 truncate text-stone-100 dark:text-rose-100",
+  userDropdownIcon: "w-4 h-4 text-[#F5304B] opacity-70",
   userDropdown:
     "absolute right-0 mt-2 w-48 rounded-xl z-50 overflow-hidden transition-all duration-200 transform origin-top-right",
   userDropdownVisible: "opacity-100 translate-y-0 pointer-events-auto",
   userDropdownHidden: "opacity-0 -translate-y-2 pointer-events-none",
   userDropdownInner:
-    "bg-white rounded-lg shadow-[0_12px_40px_rgba(0,0,0,0.5)] border border-stone-200",
+    "bg-[#131316] rounded-xl shadow-[0_12px_40px_rgba(0,0,0,0.08)] dark:shadow-[0_12px_40px_rgba(0,0,0,0.5)] border border-[#2B0810] p-2 overflow-hidden",
   logoutButton:
-    "w-full cursor-pointer text-left px-4 py-3 text-sm text-stone-700 hover:bg-[#09090B] flex items-center gap-2",
-  logoutIcon: "w-4 h-4",
+    "group w-full cursor-pointer text-left px-4 py-2.5 text-sm font-bold flex items-center gap-2.5 transition-all duration-200 rounded-xl bg-transparent hover:bg-[#2B0810] text-stone-100 dark:text-stone-300 hover:text-[#F5304B] dark:hover:text-[#F5304B]",
+  logoutIcon:
+    "w-4 h-4 text-stone-400 dark:text-stone-500 group-hover:text-[#F5304B] transition-colors",
 
   // Login Button
   loginButton:

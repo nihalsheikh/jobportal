@@ -54,7 +54,7 @@ const ROUTES = {
   listCompanyQ: "/list/company-questions",
   roleQuestions: "/role-questions",
   listRoleQ: "/list/role-questions",
-  login: "/login",
+  signin: "/signin",
 };
 
 const Navbar = ({ logoSrc, brandName = "Emberly", onNavigate }) => {
@@ -167,9 +167,10 @@ const Navbar = ({ logoSrc, brandName = "Emberly", onNavigate }) => {
 
   // Logout
   const handleLogout = () => {
+    localStorage.removeItem("token");
     localStorage.removeItem("user");
     setUser(null);
-    navigate("/");
+    navigate("/signin");
     setMobileMenuOpen(false);
   };
 
@@ -420,7 +421,7 @@ const Navbar = ({ logoSrc, brandName = "Emberly", onNavigate }) => {
                   </span>
                 </button>
 
-                {/* Login/Logout Button */}
+                {/* Sign-in/Sign-out Button */}
                 {user ? (
                   <div
                     ref={userMenuContainerRef}
@@ -459,11 +460,11 @@ const Navbar = ({ logoSrc, brandName = "Emberly", onNavigate }) => {
                       >
                         <div className={s.userDropdownInner}>
                           <button
-                            onClick={() => handleLogout}
+                            onClick={handleLogout}
                             className={s.logoutButton}
                           >
                             <LogOut className={s.logoutIcon} />
-                            <span>Logout</span>
+                            <span>Sign Out</span>
                           </button>
                         </div>
                       </div>
@@ -471,14 +472,14 @@ const Navbar = ({ logoSrc, brandName = "Emberly", onNavigate }) => {
                   </div>
                 ) : (
                   <button
-                    onClick={() => handleNavigate("login")}
+                    onClick={() => handleNavigate("signin")}
                     className={`${s.loginButton} flex gap-2`}
                   >
                     <span className={s.loginButtonOverlay}></span>
                     <span className={s.loginButtonContent}>
                       <LogIn className={s.loginIcon} />
                     </span>
-                    <span>Login</span>
+                    <span>Sign In</span>
                   </button>
                 )}
               </div>
@@ -560,7 +561,7 @@ const Navbar = ({ logoSrc, brandName = "Emberly", onNavigate }) => {
                   );
                 })}
 
-                {/* Mobile Login/Logout */}
+                {/* Mobile Sign-in/Sign-out */}
                 {user ? (
                   <>
                     <div className={s.mobileUserInfo}>
@@ -574,17 +575,17 @@ const Navbar = ({ logoSrc, brandName = "Emberly", onNavigate }) => {
                       className={s.mobileLogoutButton}
                     >
                       <LogOut className={s.mobileNavIcon} />
-                      <span>Logout</span>
+                      <span>Sign Out</span>
                     </button>
                   </>
                 ) : (
                   <div className={s.mobileLoginContainer}>
                     <button
-                      onClick={() => handleNavigate("login")}
+                      onClick={() => handleNavigate("signin")}
                       className={s.mobileLoginButton}
                     >
                       <LogIn className={s.mobileNavIcon} />
-                      <span>Login</span>
+                      <span>Sign In</span>
                     </button>
                   </div>
                 )}

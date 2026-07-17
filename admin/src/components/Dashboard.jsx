@@ -67,10 +67,10 @@ const Dashboard = () => {
       try {
         const token = localStorage.getItem("token");
         // TODO: uncomment after dev
-        // if (!token) {
-        //   navigate("/login");
-        //   return;
-        // }
+        if (!token) {
+          navigate("/login");
+          return;
+        }
 
         // Fetch stats
         const statsRes = await fetch(
@@ -215,7 +215,11 @@ const Dashboard = () => {
   // fallback for logos,when failed to load logo image
   const handleImageError = (e) => {
     e.target.style.display = "none";
-    e.target.nextSibling?.classList.remove("hidden");
+    const fallback = e.target.nextSibling;
+    if (fallback) {
+      fallback.classList.remove("hidden");
+      fallback.style.display = "flex";
+    }
   };
 
   // clear all filters and set to default
